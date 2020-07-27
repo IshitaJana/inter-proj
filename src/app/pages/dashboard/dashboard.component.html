@@ -1,0 +1,42 @@
+<div class="bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+
+    <!--enter company names-->
+   <div class="row mt-5">
+    <div class="col-xl-8 mb-5 mb-xl-0">
+   <div class="col-3 d-none col-md-3 d-md-block"></div>
+  <div class="input-group mb-3">
+    <input type="text" [(ngModel)]="newCompany" value="" list="listid" class="form-control" placeholder="Enter Company Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button (click)="addToList() "class="btn btn-default" type="button" id="button-addon2">Add</button>
+    </div>
+    <datalist id="listid">
+      <option label='Apsolutio' value='Apsolutio'></option>
+        <option label='Xfactor' value='XFactor'></option>
+          <option label='Reliance' value='Reliance'></option>
+            <option label='jsjh' value='jsjh'></option>
+              <option label='a' value='a'></option>
+                <option label='b' value='b'></option>
+                  <option label='c' value='c'></option>
+        
+    </datalist>
+  </div>
+  <div class="col-3 d-none col-md-3 d-md-block"></div>
+
+	<!--Company names added-->
+  <div *ngFor="let x of items; let index = index;"> 
+		<div class="col-3 d-none col-md-3 d-md-block"></div> 
+        <div class="card text-white bg-dark mb-3" style="height:10rem ;">
+          <div class="card-body">
+            <h6 class="card-title">{{x}}</h6>
+            <a href="#" class="btn btn-primary" [routerLink]="['/company']">View</a>
+            <a href="#" class="btn btn-primary">Remove</a>
+          </div>
+        </div>     
+
+    <div class="col-3 d-none col-md-3 d-md-block"></div> 
+  </div>
+    </div>
+  </div>
+  </div>
+  </div>
